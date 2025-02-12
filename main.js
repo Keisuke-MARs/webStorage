@@ -20,7 +20,7 @@ function addToStorage() {
     //id「keyInput,valueInput」の要素を取得
     const keyInput = document.getElementById('keyInput');
     const valueInput = document.getElementById('valueInput');
-    //上2行で取得した要素の空値を削除した値を代入
+    //上2行で取得した要素の空白を削除した値を代入
     const key = keyInput.value.trim();
     const value = valueInput.value.trim();
     //key,valueの要素が入っていた時
