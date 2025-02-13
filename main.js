@@ -1,3 +1,4 @@
+//以下ローカルストレージの関数
 // localStorageの内容を表示する関数
 function showStorage() {
     //storageCheck要素を取得
@@ -13,7 +14,6 @@ function showStorage() {
         storageCheck.innerHTML += `${key}: ${value}<br>`;
     }
 }
-
 
 // 新しい項目をlocalStorageに追加する関数
 function addToStorage() {
@@ -35,16 +35,47 @@ function addToStorage() {
     }
 }
 
+//以下セッションストレージの関数
+function showSessionStorage() {
+    const sessionStorageCheck = document.querySelector('.sessionStorageCheck');
+    sessionStorageCheck.innerHTML = '';
+    for (let i = 0; i < sessionStorage.length; i++) {
+        const sessionKey = sessionStorage.key(i);
+        const sessionValue = sessionStorage.getItem(sessionKey);
+        sessionStorageCheck.innerHTML += `${sessionKey}:${sessionValue}<br>`;
+    }
+}
+function addToSessionStorage() {
+    const sessionKeyInput = document.getElementById('sessionKeyInput');
+    const sessionValueInput = document.getElementById('sessionValueInput');
+    const sessionKey = sessionKeyInput.value.trim();
+    const sessionValue = sessionValueInput.value.trim();
+    if (sessionKey && sessionValue) {
+        sessionStorage.setItem(sessionKey, sessionValue);
+        sessionKeyInput.value = '';
+        sessionValueInput.value = '';
+        showSessionStorage()
+        console.log(`セッションストレージに追加: ${sessionKey} = ${sessionValue}`);
+    }
+}
+
 // DOMが読み込まれた後に実行(ページが最初に読み込まれたとき)
 document.addEventListener('DOMContentLoaded', () => {
     // 初期表示
     showStorage();
+    showSessionStorage();
 
-    // 「storageの中を見る」ボタンにイベントリスナーを追加
+    // 「ローカルストレージの中を見る」ボタンにイベントリスナーを追加
     const checkButton = document.getElementById('checkStorage');
     checkButton.addEventListener('click', showStorage);
 
-    // 「storageに追加」ボタンにイベントリスナーを追加
+    // 「ローカルストレージに追加」ボタンにイベントリスナーを追加
     const addButton = document.getElementById('addToStorage');
     addButton.addEventListener('click', addToStorage);
+
+    //以下セッションストレージのこと
+    const sessionCheckButton = document.getElementById('checkSessionStorage');
+    sessionCheckButton.addEventListener('click', showSessionStorage);
+    const addSessionButton = document.getElementById('addToSessionStorage');
+    addSessionButton.addEventListener('click', addToSessionStorage);
 });
