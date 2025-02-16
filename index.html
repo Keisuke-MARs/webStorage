@@ -5,35 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webstorageテスト</title>
+    <style>
+        .heading-23 {
+            padding: .5em .7em;
+            border-left: 5px solid #2589d0;
+            border-bottom: 3px solid #d2d2d2;
+            background-color: #f2f2f2;
+            color: #333333;
+        }
+
+        .textbox-1 {
+            width: 500px;
+            padding: 8px 10px;
+            border: 1px solid #969da3;
+            border-radius: 3px;
+            color: #333;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .textbox-1::placeholder {
+            color: #999;
+        }
+
+        .button-36 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            margin: 0 auto;
+            padding: .9em 2em;
+            border: 1px solid #2589d0;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #2589d0;
+            font-size: 1em;
+        }
+
+        .button-36:hover {
+            border: none;
+            background-color: #2589d0;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .flex {
+            display: flex;
+        }
+    </style>
 </head>
 
 <body>
     <div>
-        <h2>ローカルストレージの中身</h2>
+        <h1 class="heading-23">ローカルストレージの中身</h1>
         <div class="storageCheck"></div>
-        <button id="checkStorage">ローカルストレージの中を見る</button>
 
-        <h2>新しい項目を追加</h2>
-        <input type="text" id="keyInput" placeholder="キー">
-        <input type="text" id="valueInput" placeholder="値">
-        <button id="addToStorage">ローカルストレージに追加</button>
+        <h2 class="heading-23">新しい項目を追加</h2>
+        <div class="flex">
+            <input type="text" class="textbox-1" id="keyInput" placeholder="キー">
+            <input type="text" class="textbox-1" id="valueInput" placeholder="値">
+            <button id="addToStorage" class="button-36">ローカルストレージに追加</button>
+        </div>
+
     </div>
     <div>
-        <h2>セッションストレージの中身</h2>
+        <h1 class="heading-23">セッションストレージの中身</h1>
         <div class="sessionStorageCheck"></div>
-        <button id="checkSessionStorage">セッションストレージの中を見る</button>
+        <h2 class="heading-23">新しい項目を追加</h2>
+        <div class="flex">
+            <input type="text" class="textbox-1" id="sessionKeyInput" placeholder="キー">
+            <input type="text" class="textbox-1" id="sessionValueInput" placeholder="値">
+            <button id="addToSessionStorage" class="button-36">セッションストレージに追加</button>
+        </div>
 
-        <h2>新しい項目を追加</h2>
-        <input type="text" id="sessionKeyInput" placeholder="キー">
-        <input type="text" id="sessionValueInput" placeholder="値">
-        <button id="addToSessionStorage">セッションストレージに追加</button>
     </div>
 
     <div>
-        <h2> <a href="indexedDB.html">
+        <h2 class="heading-23"> <a href="indexedDB.html">
                 indexedDBへ
             </a></h2>
-
     </div>
     <script src="main.js"></script>
 </body>

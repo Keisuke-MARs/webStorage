@@ -73,7 +73,7 @@ function displayPeople() {
                 <td>${cursor.value.age}</td>
                 <td>${cursor.value.image ? `<img src="${cursor.value.image}" alt="Person Image">` : "No Image"}</td>
                 <td>
-                    <button onclick="deletePerson(${cursor.key})">削除</button>
+                    <button onclick="deletePerson(${cursor.key})" class="button-36">削除</button>
                 </td>
             `
             tbody.appendChild(tr)//要素をテーブルに挿入

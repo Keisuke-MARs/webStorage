@@ -11,7 +11,7 @@ function showStorage() {
         const key = localStorage.key(i);
         const value = localStorage.getItem(key);
         //storageCheckに取得した要素をhtmlとして表示
-        storageCheck.innerHTML += `${key}: ${value}<br>`;
+        storageCheck.innerHTML += `<li>${key}: ${value}</li><br>`;
     }
 }
 
@@ -42,7 +42,7 @@ function showSessionStorage() {
     for (let i = 0; i < sessionStorage.length; i++) {
         const sessionKey = sessionStorage.key(i);
         const sessionValue = sessionStorage.getItem(sessionKey);
-        sessionStorageCheck.innerHTML += `${sessionKey}:${sessionValue}<br>`;
+        sessionStorageCheck.innerHTML += `<li>${sessionKey}:${sessionValue}</li><br>`;
     }
 }
 function addToSessionStorage() {
@@ -66,16 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
     showSessionStorage();
 
     // 「ローカルストレージの中を見る」ボタンにイベントリスナーを追加
-    const checkButton = document.getElementById('checkStorage');
-    checkButton.addEventListener('click', showStorage);
+    // const checkButton = document.getElementById('checkStorage');
+    // checkButton.addEventListener('click', showStorage);
 
     // 「ローカルストレージに追加」ボタンにイベントリスナーを追加
     const addButton = document.getElementById('addToStorage');
     addButton.addEventListener('click', addToStorage);
 
     //以下セッションストレージのこと
-    const sessionCheckButton = document.getElementById('checkSessionStorage');
-    sessionCheckButton.addEventListener('click', showSessionStorage);
+    // const sessionCheckButton = document.getElementById('checkSessionStorage');
+    // sessionCheckButton.addEventListener('click', showSessionStorage);
     const addSessionButton = document.getElementById('addToSessionStorage');
     addSessionButton.addEventListener('click', addToSessionStorage);
 });

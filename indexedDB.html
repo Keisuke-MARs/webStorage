@@ -16,6 +16,7 @@
             border: 1px solid black;
             padding: 8px;
             text-align: left;
+            margin: 0 auto;
         }
 
         th {
@@ -26,17 +27,60 @@
             max-width: 100px;
             max-height: 100px;
         }
+
+        .textbox-1 {
+            width: 500px;
+            padding: 8px 10px;
+            border: 1px solid #969da3;
+            border-radius: 3px;
+            color: #333;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .textbox-1::placeholder {
+            color: #999;
+        }
+
+        .heading-23 {
+            padding: .5em .7em;
+            border-left: 5px solid #2589d0;
+            border-bottom: 3px solid #d2d2d2;
+            background-color: #f2f2f2;
+            color: #333333;
+        }
+
+        .button-36 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            margin: 0 auto;
+            padding: .9em 2em;
+            border: 1px solid #2589d0;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #2589d0;
+            font-size: 1em;
+        }
+
+        .button-36:hover {
+            border: none;
+            background-color: #2589d0;
+            color: #fff;
+            font-weight: 600;
+        }
     </style>
 </head>
 
 <body>
-    <h1>IndexedDB CRUD操作</h1>
+    <h1 class="heading-23">IndexedDB CRUD操作</h1>
 
     <form id="personForm">
-        <input type="text" id="name" placeholder="名前" required>
-        <input type="number" id="age" placeholder="年齢" required>
+        <input type="text" class="textbox-1" id="name" placeholder="名前" required>
+        <input type="number" class="textbox-1" id="age" placeholder="年齢" required>
         <input type="file" id="image" accept="image/*">
-        <button type="submit">追加</button>
+        <button type="submit" class="button-36">追加</button>
     </form>
 
     <table id="personTable">
@@ -52,7 +96,7 @@
         <tbody></tbody>
     </table>
 
-    <h2><a href="index.html">WEBストレージへ</a></h2>
+    <h2 class="heading-23"><a href="index.html">WEBストレージへ</a></h2>
 
     <script src="app.js"></script>
 </body>
