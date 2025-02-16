@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexedDB CRUD操作</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>IndexedDB CRUD操作</h1>
+
+    <form id="personForm">
+        <input type="text" id="name" placeholder="名前" required>
+        <input type="number" id="age" placeholder="年齢" required>
+        <input type="file" id="image" accept="image/*">
+        <button type="submit">追加</button>
+    </form>
+
+    <table id="personTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名前</th>
+                <th>年齢</th>
+                <th>画像</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2><a href="index.html">WEBストレージへ</a></h2>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
