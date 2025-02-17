@@ -70,6 +70,26 @@
             color: #fff;
             font-weight: 600;
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
     </style>
 </head>
 
@@ -95,7 +115,20 @@
         </thead>
         <tbody></tbody>
     </table>
-
+    <!-- 編集用モーダル -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2>データ編集</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <input type="text" id="editName" placeholder="名前" required>
+                <input type="number" id="editAge" placeholder="年齢" required>
+                <input type="file" id="editImage" accept="image/*">
+                <button type="submit">更新</button>
+                <button type="button" id="cancelEdit">キャンセル</button>
+            </form>
+        </div>
+    </div>
     <h2 class="heading-23"><a href="index.html">WEBストレージへ</a></h2>
 
     <script src="app.js"></script>
